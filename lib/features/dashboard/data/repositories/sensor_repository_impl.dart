@@ -13,7 +13,7 @@ class SensorRepositoryImpl implements SensorRepository {
     final locations = ['Line A', 'Line B', 'Line C'];
     final uuid = Uuid();
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 12; i++) {
       final location = locations[i % locations.length];
       final hour = 8 + (i % 10);
       final timestamp = DateTime.now().copyWith(

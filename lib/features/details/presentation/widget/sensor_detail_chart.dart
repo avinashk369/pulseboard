@@ -16,9 +16,9 @@ class SensorDetailChart extends StatelessWidget {
           'Temperature Trend',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 24),
         SizedBox(
-          height: 200,
+          height: MediaQuery.sizeOf(context).height * .3,
           child: LineChart(
             LineChartData(
               lineTouchData: LineTouchData(
@@ -94,9 +94,9 @@ class SensorDetailChart extends StatelessWidget {
           'Metrics Comparison',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 24),
         SizedBox(
-          height: 200,
+          height: MediaQuery.sizeOf(context).height * .35,
           child: BarChart(
             BarChartData(
               barTouchData: BarTouchData(
@@ -129,6 +129,10 @@ class SensorDetailChart extends StatelessWidget {
                 ),
               ),
               titlesData: FlTitlesData(
+                rightTitles:
+                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                topTitles:
+                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
                 leftTitles: AxisTitles(
                   sideTitles: SideTitles(
                     showTitles: true,
@@ -154,8 +158,7 @@ class SensorDetailChart extends StatelessWidget {
                 ),
               ),
               borderData: FlBorderData(
-                show: true,
-                border: Border.all(color: Colors.grey),
+                show: false,
               ),
               barGroups: [
                 BarChartGroupData(
